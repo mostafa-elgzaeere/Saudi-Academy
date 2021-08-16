@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+    {{block.super}}جميع الدروس
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container" style="position: relative; margin-top: 5%; text-align: center; color: white;">
+  <h2>{{semester.name}}</h2>
+</div>
+
+<!--Classes-->
+<div class="container">
+  <div class="row" >
+  {% if semester.lectuers.all  %}
+  {% for i in semester.lectuers.all %}
+  	<div class="feature-card lectuer col-10 ml-5 mb-2 col-md-5 col-lg-3 text-center">
+		<div class="feature-card-tilte">
+			<h3>
+			{{i.title}}
+			</h3>
+		</div>
+		<div class="feature-card-deatails">
+			<i class="fa fa-bank"></i>
+			<p class="text-white">{{i.description}}</p>
+      <h5 class="text-muted">الدرس تم رفعه قبل :<br>  {{i.add_date|timesince}}</h5>
+			 <a href={% url 'show_lectuer' semester.id i.id  %} class="btn btn-dark mb-2">الذهاب للمحاضرة</a>
+		</div>
+	</div>
+  
+  {% endfor %}
+  {% else %}
+  <div class="container mt-5 text-center "> 
+    <h2 class="text-danger"> لا توجد شروحات حالياً </h2> 
+
+  </div>
+  
+  {% endif %}
+
+
+
+
+  </div>
+</div>
+<!--end Classes-->
+
+
+
+<div class="container" style="position: relative; margin-top: 15%; text-align: center; color: white;" >
+    <h2> لوحة الشرف</h2>
+  </div>
+  <!--excelant student-->
+  <div class="container mt-5 mb-2">
+    <div class="row"style="text-align:center;justify-content:center"  >
+    {% if students %}
+    
+      {% for i in students  %}  
+   
+             <div  style="background-color: rgb(99, 138, 143); width: 100px; height: auto; position: relative; color: #000; border-radius: 20px; margin-left: 15px;"  class="lectuer col-4 ml-2 mb-2 col-md-5 col-lg-3 text-center">
+        <h2 class="mt-2"> تحية وتقدير للطالب  <span class="text-white"> {{i.student.get_full_name}}</span></h2>
+        <h5> و نرجو منه تقبل الهدية التي ستقدم له و نتمني منه ان يظل دائماً متواجد في لوحة الشرف </h5>
+        
+      </div>
+      {% endfor %}
+      
+    {% else %}
+    <h4 class="text-primary">نرجو من طلابنا بذل جهد اكبر للدخول في القائمة </h4>
+    {% endif %}
+  
+    
+    </div>
+  </div>
+  
+  <!--end excelant student-->
+
+{% endblock content %}

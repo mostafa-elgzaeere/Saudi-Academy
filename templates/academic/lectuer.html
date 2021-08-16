@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+    {{block.super}}
+    {{lectuer.title}}
+    {% endblock title %}
+
+
+
+
+
+{% block content %}   
+
+
+<h2 class="text-center mt-5" style="position: relative; font-family: 'Reem Kufi', sans-serif; color: white;" >{{lectuer.title}}</h2>
+
+
+  <!--lectuer video-->
+    
+    <div class="contanier mb-5" style="width: 100%; height: 400px; position: relative; margin-top:5%;"  >
+        <video controls src=' {% static video %}'  style="width: 100%; height: 100%;"  ></video>
+        <div class="w-75 mr-5 mb-4 float-right question" style="background-color: #f9f9f9;">
+            <h5 class="card-header text-right">سؤال المحاضرة ....؟</h5>
+            <div class="card-body row">
+              <p class="card-text  text-right col-12 col-md-12 float-right">{{lectuer.question}}</p>
+            </div>
+          </div>
+    </div> 
+    <!--end lectuer video-->
+
+
+
+    <!--comments-->
+{% for i in comments  %}
+
+    <div class="card w-50 float-right mr-5 mb-2 text-right" style="border: 2px solid rgb(44, 36, 119);border-radius: 15px ;"  >
+        <h5 class="card-header"  style="background-color: rgb(44, 36, 119); border-radius: 10px; color: white;" > هذا التعليق بواسطة الطالب : {{i.writer}}</h5>    
+        <div class="card-body row">
+
+        <p class="card-text col-12">{{i.content}}</p> 
+             <p class="card-text col-11 col-md-11 float-right text-muted">{{i.add_date|timesince}} : هذا التعليق منذ</p>
+        </div>
+      </div>
+      
+
+{% endfor %}
+
+    <!--end comments-->
+
+
+    <!--add comment-->
+    <form class="form w-75 mt-5" method="POST" style="position: relative; bottom: 300%;" id="form_comment" data-aos="fade-in">
+        {% csrf_token %}
+        <div class="form-group">
+            <textarea type="text" style="resize:none" name="comment" rows="6" id="comment" placeholder="Write a Comment" class="form-control ml-5" required ></textarea>
+            <input type="submit" value="الرد" class="btn btn-primary  mt-2 ml-5" id="add_comment"></a>
+          </div>
+      </form> 
+    <!--end add comment-->
+    {% endblock content %}
+   
+
+{% block src %}
+ <script src= {% static 'comment.js' %}></script>
+{% endblock src %}
+  

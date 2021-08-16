@@ -1,0 +1,23 @@
+{% load static %}
+<header>
+        <nav>
+            <div class="logo "> <a href={% url 'home' %}><img src={% static '1.png' %} alt="" srcset=""></a></div>
+            <div>
+                <ul>
+                {% if user.is_authenticated %}
+                <li class="user">   الطالب : {{user}} </li>
+                <li><a class="btn btn-dark" href={% url 'logout' %}>خروج</a> </li>
+                <li><a class="btn btn-light" href={% url 'password_change' %}>تغيير كلمة السر</a> </li>
+                
+
+                {% else %}
+
+                 <li><a class="btn btn-dark" href={% url 'login' %}>تسجيل الدخول</a> </li>
+                <li><a class="btn btn-light" href={% url 'signup' %}>انشاء حساب</a> </li>
+                
+                 </ul>
+                {% endif %}
+            </div>
+        </nav>
+</header>
+    

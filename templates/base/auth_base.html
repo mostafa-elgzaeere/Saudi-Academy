@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href={% static 'style.css' %}>
+
+    <link rel="stylesheet" href= {% static 'bootstrap.min.css' %}>
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    
+<title> {% block title %} Academic - {% endblock title %}
+</title>
+   
+</head>
+
+<body>
+   {% include 'includes/nav.html' %}
+    <!--background-->
+  <video id="bac" class="video" autoplay muted loop oncontextmenu="return false;" style="z-index:-1">
+        <source src={% static 'rain.mp4' %} type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <!--end background-->
+  
+ 
+
+
+
+
+
+
+   {% block content %}
+   
+   {% endblock content %}
+
+
+     
+
+
+
+
+    <script src={% static 'script.js' %}></script>
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script src= 'https://unpkg.com/aos@next/dist/aos.js' ></script>
+    <script>
+            AOS.init({
+        offset: 120,
+        duration: 600});
+    </script>
+
+    <script src= {% static 'jquery.min.js' %}></script>
+    <script src={% static 'bootstrap.min.js' %}></script>  
+
+
+    {% block scr %}
+    {% endblock scr %}
+    <script src= {% static 'typed.min.js' %}></script>
+    <script src= {% static 'home_type.js' %}></script>
+
+
+</body>
+
+</html>

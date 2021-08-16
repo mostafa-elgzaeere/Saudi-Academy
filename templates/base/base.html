@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href={% static 'style.css' %}>
+
+    <link rel="stylesheet" href= {% static 'bootstrap.min.css' %}>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <link rel="shortcut icon" href="{% static '1.png' %}">
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    
+<title> {% block title %} اكاديمة سعودي - {% endblock title %}
+</title>
+   
+</head>
+
+<body>
+   {% include 'includes/nav.html' %}
+    <!--background-->
+  <video id="bac" class="video" autoplay muted loop oncontextmenu="return false;" style="z-index:-1">
+        <source src={% static 'rain.mp4' %} type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <!--end background-->
+  
+
+
+   {% block content %}
+   
+   {% endblock content %}
+
+
+     
+
+    <script src= {% static "script.js" %} ></script>
+    <script src= 'https://unpkg.com/aos@next/dist/aos.js' ></script>
+    <script>
+            AOS.init({
+        offset: 120,
+        duration: 600});
+    </script>
+
+    <script src= {% static 'jquery.min.js' %}></script>
+    <script src={% static 'bootstrap.min.js' %}></script>  
+
+    <script src= {% static 'typed.min.js' %}></script>
+    <script src= {% static 'home_type.js' %}></script>
+
+
+</body>
+
+</html>

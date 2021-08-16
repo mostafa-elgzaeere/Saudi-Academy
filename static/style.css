@@ -1,0 +1,237 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Merienda', cursive;
+    font-family: 'El Messiri', sans-serif;
+}
+
+header{
+    position: relative;
+}
+header nav{
+    padding-top: 25px;
+    display: flex;
+    height: 50px;
+    font-size: 25px;
+}
+header nav ul{
+    display:flex;
+    position: absolute;
+    right:5px;
+}
+header nav ul li {
+    list-style-type: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-right: 25px;
+
+} 
+header nav ul li a:hover {
+    color:white;
+}
+
+header nav ul li a{
+    text-decoration:none;
+    color:black;
+  
+
+}
+
+header .logo img{
+    position: relative;
+    top: -50px;
+    z-index: 1000;
+    margin-left: 15%;
+    width: 140px;
+    height: 150px;
+}
+
+header nav div ul li:hover{
+    transition-duration: 1s;
+}
+
+header nav div ul li:hover {
+color: rgb(253, 253, 253);
+}
+
+
+.video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width:680px){
+    .user{
+       font-size: 20px;
+    }    
+    .logo{
+        display: none;
+    }
+}
+.cards{
+    margin-top: 25%;
+    height: 550px;
+    margin-bottom: 10%;
+    overflow-y: hidden;
+}
+.cards .card{
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+header .big_menu{
+    background-color:#f9f9f9;
+    text-align: right;
+    width: 200px;
+    padding-right: 25px;
+
+}
+.lectuer{
+    transition: .6s all ease-in-out;
+}
+.lectuer:hover{
+    transform: scale(1.1);
+}
+.card{
+    transition: .6s all ease-in-out;
+}
+.card:hover{
+    transform: scale(1.1);
+ 
+}
+.semesters:hover{
+    transform: scale(1.1);
+ 
+}
+.question{
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes move {
+    from{
+        position: relative;
+        right:5%;
+        border-radius:10px;
+    }
+    to{
+        position: relative;
+        right: 15%;
+        border-radius:30px;
+
+    }
+}
+
+
+footer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: auto;
+    background-color:red;
+    height: 162px;
+}
+
+
+
+@media screen and (min-width:300px) and (max-width:760px) {
+    footer{
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width:761px) and (max-width:1200px){
+    footer{
+        margin-top: 10%;
+    }
+}
+
+.typed-cursor{
+    display: inline;
+}
+
+
+
+#change_bac{
+    margin-left: 2px;
+    opacity: .6;
+}
+
+a:hover { text-decoration: none }
+
+.feature-card {
+    width: 380px;
+    height: 250px;
+    margin: 50px auto;
+    background-position: center top;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.feature-card-deatails {
+    position: absolute;
+    bottom: -228px;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    transition: 0.3s ease-in-out;
+    font-size: 15px;
+    color: #888;
+}
+
+.feature-card-tilte {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    padding: 20px;
+    background: #fff;
+}
+
+.feature-card-tilte h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #373737;
+}
+
+.feature-card:hover .feature-card-tilte {
+    bottom: 100%;
+}
+
+.feature-card-deatails i {
+    font-size: 35px;
+    color: #1d365c;
+}
+
+.feature-card-deatails h4 {
+    font-size: 20px;
+    color: #1d365c;
+    margin: 15px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.feature-card-deatails a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1d365c;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.feature-card:hover .feature-card-deatails {
+    bottom: 0;
+}
